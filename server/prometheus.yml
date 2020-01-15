@@ -1,0 +1,10 @@
+global:
+  scrape_interval:     15s # 默认抓取间隔, 15秒向目标抓取一次数据。
+  external_labels:
+    monitor: 'codelab-monitor'
+# 这里表示抓取对象的配置
+scrape_configs:
+- job_name: 'prometheus'
+  scrape_interval:   5s 
+  static_configs:
+    - targets: ['localhost:9090']
